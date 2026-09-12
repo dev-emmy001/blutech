@@ -1,69 +1,88 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="flex flex-col min-h-screen bg-white font-sans overflow-hidden">
+
+      {/* Hero Section */}
+      <section className="relative pt-40 md:pt-48 pb-16 px-6 max-w-7xl mx-auto w-full flex flex-col items-center text-center">
+
+        {/* Hero Content */}
+        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-gray-900 max-w-6xl mx-auto leading-[1.1] font-serif">
+          Building Affordable, Scalable Tech Solutions for Growing Businesses
+        </h1>
+
+        <p className="mt-6 text-lg md:text-l text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          We turn your ideas into powerful web and mobile applications. Our expert team handles the entire development lifecycle—from concept to deployment—delivering premium, sustainable solutions that fit your budget.
+        </p>
+
+        <div className="mt-10 flex flex-col sm:flex-row gap-4 items-center justify-center w-full sm:w-auto">
+          <Link
+            href="/courses"
+            className="w-full sm:w-auto px-8 py-4 bg-blutech-primary hover:bg-blutech-secondary text-white rounded-full font-semibold text-lg transition-colors"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+            Let's Get Started
+          </Link>
+          <Link
+            href="/contact"
+            className="w-full sm:w-auto px-8 py-4 bg-white border border-gray-900 text-gray-900 hover:bg-gray-50 rounded-full font-semibold text-lg transition-colors"
+          >
+            Chat on WhatsApp
+          </Link>
+        </div>
+      </section>
+
+      {/* Bento Grid Section */}
+      <section className="px-6 max-w-7xl mx-auto w-full pb-24">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+
+          {/* Main Left Image (Video Call) */}
+          <div className="md:col-span-2 rounded-[2rem] overflow-hidden relative min-h-[300px] md:min-h-[450px] shadow-sm group">
+            <img
+              src="/working-on-laptop.jpg"
+              alt="Professional working on laptop"
+              className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+
+          {/* Middle Column (Stacked Cards) */}
+          <div className="md:col-span-1 flex flex-col gap-6">
+            {/* Teachers Card */}
+            <div className="bg-[#FFA28B] rounded-[2rem] p-8 flex flex-col justify-center h-full min-h-[210px] shadow-sm transform transition-transform hover:-translate-y-1">
+              <div className="flex -space-x-3 mb-5">
+                <img className="w-12 h-12 rounded-full border-2 border-[#FFA28B] object-cover" src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=100&q=80" alt="Teacher" />
+                <img className="w-12 h-12 rounded-full border-2 border-[#FFA28B] object-cover" src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=100&q=80" alt="Teacher" />
+                <img className="w-12 h-12 rounded-full border-2 border-[#FFA28B] object-cover" src="https://images.unsplash.com/photo-1589156191108-c762ff4b96ab?auto=format&fit=crop&w=100&q=80" alt="Teacher" />
+                {/* <img className="w-12 h-12 rounded-full border-2 border-[#FFA28B] object-cover" src="https://images.unsplash.com/photo-1523824922382-2058b8f2a249?auto=format&fit=crop&w=100&q=80" alt="Teacher" /> */}
+                <img className="w-12 h-12 rounded-full border-2 border-[#FFA28B] object-cover" src="https://images.unsplash.com/photo-1506803682981-6e718a9dd3ee?auto=format&fit=crop&w=100&q=80" alt="Teacher" />
+              </div>
+              <h3 className="font-bold text-gray-900 text-xl leading-tight font-serif">5+ Global Tech Partners (AWS, GDG, etc.)</h3>
+            </div>
+
+            {/* Quote Card */}
+            <div className="bg-[#67E8B8] rounded-[2rem] p-8 flex flex-col justify-center h-full min-h-[210px] shadow-sm transform transition-transform hover:-translate-y-1">
+              <p className="font-bold text-gray-900 text-lg leading-snug font-serif">
+                Full-Cycle SDLC Management
+              </p>
+              <div className="mt-5">
+                <p className="text-sm text-gray-900">Trusted by 20+ Brands. Empowering startups and enterprises with reliable tech foundations.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Image (Boy with tablet) */}
+          <div className="md:col-span-1 rounded-[2rem] overflow-hidden relative min-h-[300px] md:min-h-[450px] shadow-sm group">
+            <img
+              src="/happy-biz.jpg"
+              alt="Happy business professional"
+              className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
         </div>
-      </main>
+      </section>
+
+
+
     </div>
   );
 }
