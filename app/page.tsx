@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ServicesCarousel from "@/components/ServicesCarousel";
 
 export default function Home() {
   return (
@@ -8,11 +9,11 @@ export default function Home() {
       <section className="relative pt-40 md:pt-48 pb-16 px-6 max-w-7xl mx-auto w-full flex flex-col items-center text-center">
 
         {/* Hero Content */}
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-gray-900 max-w-6xl mx-auto leading-[1.1] font-serif">
+        <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight text-gray-900 md:max-w-6xl mx-auto leading-[1.1] font-serif">
           Building Affordable, Scalable Tech Solutions for Growing Businesses
         </h1>
 
-        <p className="mt-6 text-lg md:text-l text-gray-600 max-w-4xl mx-auto leading-relaxed">
+        <p className="mt-6 text-base md:text-l text-gray-600 max-w-4xl mx-auto leading-relaxed">
           We turn your ideas into powerful web and mobile applications. Our expert team handles the entire development lifecycle—from concept to deployment—delivering premium, sustainable solutions that fit your budget.
         </p>
 
@@ -81,7 +82,8 @@ export default function Home() {
         </div>
       </section>
 
-
+      {/* Services Carousel Section */}
+      <ServicesCarousel />
 
     </div>
   );
