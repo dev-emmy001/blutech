@@ -71,7 +71,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
           <p>© All rights reserved. <span className="text-blutech-primary font-medium">Blutech</span></p>
-          <p>Powered by <span className="text-blutech-primary font-medium">Blutech</span></p>
+          {/* <p>Powered by <span className="text-blutech-primary font-medium">Blutech</span></p> */}
         </div>
       </div>
     </footer>

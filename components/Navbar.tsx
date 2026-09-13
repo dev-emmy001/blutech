@@ -48,7 +48,7 @@ export default function Navbar() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-blutech-primary hover:bg-blutech-secondary text-white px-10 py-3 rounded-full text-base font-semibold transition-colors"
+              className="bg-blutech-primary hover:bg-blutech-secondary text-white px-8 py-4  rounded-full text-base font-semibold transition-colors"
             >
               Contact Us
             </motion.button>
@@ -63,11 +63,11 @@ export default function Navbar() {
         >
           <motion.span
             animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 4 : 0 }}
-            className="block w-6 h-0.5 bg-current rounded-full origin-center"
+            className="block w-10 h-0.5 bg-current rounded-full origin-center"
           ></motion.span>
           <motion.span
             animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -4 : 0 }}
-            className="block w-6 h-0.5 bg-current rounded-full origin-center"
+            className="block w-10 h-0.5 bg-current rounded-full origin-center"
           ></motion.span>
         </button>
 
@@ -79,7 +79,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="absolute top-20 left-4 right-4 bg-white shadow-sm  rounded-3xl flex flex-col p-6 gap-2 md:hidden z-40 overflow-hidden"
+              className="absolute top-20 left-0 right-0 bg-white flex flex-col p-6 gap-2 md:hidden z-40 overflow-hidden"
             >
               {navLinks.map((link, i) => (
                 <motion.div

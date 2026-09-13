@@ -2,8 +2,8 @@
 
 @theme {
   /* Blutech Color Palette */
-  --color-blutech-primary: #1d4ed8; /* Darker blue (blue-700) */
-  --color-blutech-secondary: #1e3a8a; /* Even darker blue (blue-900) */
+  --color-blutech-primary: #0075fff2; /* Darker blue (blue-700) */
+  --color-blutech-secondary: #004bf5; /* Even darker blue (blue-900) */
   --color-blutech-dark: #0f172a;
   --color-blutech-surface: #f8fafc;
   --color-blutech-card1: #f1f5f9;
@@ -16,4 +16,8 @@
   /* Bento Grid Radii */
   --radius-3xl: 1.5rem;
   --radius-4xl: 2rem;
+  
+}
+ .scrollbar-hide::-webkit-scrollbar{
+  display: none;
 }
