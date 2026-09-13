@@ -38,7 +38,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
 
           {/* Main Left Image (Video Call) */}
-          <div className="md:col-span-2 rounded-[2rem] overflow-hidden relative min-h-[300px] md:min-h-[450px] shadow-sm group">
+          <div className="md:col-span-2 rounded-[2rem] overflow-hidden relative min-h-[300px] md:min-h-[450px] group">
             <img
               src="/working-on-laptop.jpg"
               alt="Professional working on laptop"
@@ -49,7 +49,7 @@ export default function Home() {
           {/* Middle Column (Stacked Cards) */}
           <div className="md:col-span-1 flex flex-col gap-6">
             {/* Teachers Card */}
-            <div className="bg-[#FFA28B] rounded-[2rem] p-8 flex flex-col justify-center h-full min-h-[210px] shadow-sm transform transition-transform hover:-translate-y-1">
+            <div className="bg-[#FFA28B] rounded-[2rem] p-8 flex flex-col justify-center h-full min-h-[210px]  transform transition-transform hover:-translate-y-1">
               <div className="flex -space-x-3 mb-5">
                 <img className="w-12 h-12 rounded-full border-2 border-[#FFA28B] object-cover" src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=100&q=80" alt="Teacher" />
                 <img className="w-12 h-12 rounded-full border-2 border-[#FFA28B] object-cover" src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=100&q=80" alt="Teacher" />
@@ -61,7 +61,7 @@ export default function Home() {
             </div>
 
             {/* Quote Card */}
-            <div className="bg-[#67E8B8] rounded-[2rem] p-8 flex flex-col justify-center h-full min-h-[210px] shadow-sm transform transition-transform hover:-translate-y-1">
+            <div className="bg-[#67E8B8] rounded-[2rem] p-8 flex flex-col justify-center h-full min-h-[210px] transform transition-transform hover:-translate-y-1">
               <p className="font-bold text-gray-900 text-lg leading-snug font-serif">
                 Full-Cycle SDLC Management
               </p>
@@ -72,7 +72,7 @@ export default function Home() {
           </div>
 
           {/* Right Image (Boy with tablet) */}
-          <div className="md:col-span-1 rounded-[2rem] overflow-hidden relative min-h-[300px] md:min-h-[450px] shadow-sm group">
+          <div className="md:col-span-1 rounded-[2rem] overflow-hidden relative min-h-[300px] md:min-h-[450px] group">
             <img
               src="/happy-biz.jpg"
               alt="Happy business professional"

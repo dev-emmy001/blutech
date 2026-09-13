@@ -48,7 +48,7 @@ export default function Navbar() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-blutech-primary hover:bg-blutech-secondary text-white px-8 py-4  rounded-full text-base font-semibold transition-colors"
+              className="bg-blutech-primary hover:bg-blutech-secondary text-white px-10 py-3 rounded-full text-base font-semibold transition-colors"
             >
               Contact Us
             </motion.button>

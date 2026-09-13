@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import { Desktop, MagicWand, DeviceMobile, Cloud, TrendUp, ArrowLeft, ArrowRight } from "@phosphor-icons/react";
 
 const services = [
   {
@@ -10,11 +11,7 @@ const services = [
     subtitle: "Custom websites & web apps",
     bgColor: "bg-blue-50",
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600">
-        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-        <line x1="8" y1="21" x2="16" y2="21"></line>
-        <line x1="12" y1="17" x2="12" y2="21"></line>
-      </svg>
+      <Desktop size={32} weight="duotone" className="text-blue-600" />
     ),
   },
   {
@@ -23,12 +20,7 @@ const services = [
     subtitle: "Intuitive user experiences",
     bgColor: "bg-orange-50",
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-orange-500">
-        <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-        <path d="M2 2l7.586 7.586"></path>
-        <circle cx="11" cy="11" r="2"></circle>
-      </svg>
+      <MagicWand size={32} weight="duotone" className="text-orange-500" />
     ),
   },
   {
@@ -37,10 +29,7 @@ const services = [
     subtitle: "iOS & Android solutions",
     bgColor: "bg-green-50",
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-green-600">
-        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-        <line x1="12" y1="18" x2="12.01" y2="18"></line>
-      </svg>
+      <DeviceMobile size={32} weight="duotone" className="text-green-600" />
     ),
   },
   {
@@ -49,9 +38,7 @@ const services = [
     subtitle: "Scalable infrastructure",
     bgColor: "bg-purple-50",
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-purple-600">
-        <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
-      </svg>
+      <Cloud size={32} weight="duotone" className="text-purple-600" />
     ),
   },
   {
@@ -60,9 +47,7 @@ const services = [
     subtitle: "SEO & Growth strategies",
     bgColor: "bg-yellow-50",
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-yellow-600">
-        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-      </svg>
+      <TrendUp size={32} weight="duotone" className="text-yellow-600" />
     ),
   }
 ];
@@ -88,8 +73,8 @@ export default function ServicesCarousel() {
 
         {/* Left Side: Title & Buttons */}
         <div className="w-full md:w-1/3 flex flex-col items-start md:px-0 flex-shrink-0">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 font-serif leading-tight">
-            Explore Core <br /> Services
+          <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 font-serif leading-tight mb-4 md:mb-0">
+            Explore Core <span className="text-blutech-primary">Services</span>
           </h2>
 
           <div className="mt-10 flex items-center gap-4 hidden md:flex">
@@ -98,14 +83,14 @@ export default function ServicesCarousel() {
               className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:border-blutech-primary hover:text-blutech-primary transition-colors focus:outline-none"
               aria-label="Scroll left"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+              <ArrowLeft size={24} weight="regular" />
             </button>
             <button
               onClick={() => scroll('right')}
-              className="w-12 h-12 rounded-full bg-blutech-primary text-white flex items-center justify-center hover:bg-blutech-secondary transition-colors shadow-md focus:outline-none"
+              className="w-12 h-12 rounded-full bg-blutech-primary text-white flex items-center justify-center hover:bg-blutech-secondary transition-colors focus:outline-none"
               aria-label="Scroll right"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              <ArrowRight size={24} weight="regular" />
             </button>
           </div>
         </div>
@@ -121,9 +106,9 @@ export default function ServicesCarousel() {
               <motion.div
                 key={service.id}
                 whileHover={{ y: -5 }}
-                className={`flex-shrink-0 w-[260px] md:w-[280px] p-8 rounded-3xl snap-start flex flex-col justify-between min-h-[220px] ${service.bgColor}`}
+                className={`flex-shrink-0 w-[260px] md:w-[280px] p-6 md:p-8 rounded-3xl snap-start flex flex-col justify-between min-h-[200px] md:min-h-[220px] ${service.bgColor}`}
               >
-                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-8 border border-white/40">
+                <div className="mb-8">
                   {service.icon}
                 </div>
                 <div>
@@ -135,18 +120,18 @@ export default function ServicesCarousel() {
           </div>
 
           {/* Mobile Buttons (shown under cards on mobile) */}
-          <div className="mt-4 flex items-center gap-4 md:hidden justify-center pr-6">
+          <div className="mt-4 flex items-center gap-4 md:hidden justify-start">
             <button
               onClick={() => scroll('left')}
-              className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:border-blutech-primary hover:text-blutech-primary transition-colors focus:outline-none"
+              className="w-12 h-12 rounded-full border border-blutech-primary bg-white flex items-center justify-center text-blutech-primary hover:bg-blutech-primary hover:text-white transition-colors focus:outline-none"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+              <ArrowLeft size={24} weight="regular" />
             </button>
             <button
               onClick={() => scroll('right')}
-              className="w-12 h-12 rounded-full bg-blutech-primary text-white flex items-center justify-center hover:bg-blutech-secondary transition-colors shadow-md focus:outline-none"
+              className="w-12 h-12 rounded-full bg-blutech-primary text-white flex items-center justify-center hover:bg-blutech-secondary transition-colors focus:outline-none"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              <ArrowRight size={24} weight="regular" />
             </button>
           </div>
         </div>
