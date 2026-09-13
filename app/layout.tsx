@@ -33,6 +33,25 @@ export default function RootLayout({
         <main className="flex-grow">
           {children}
         </main>
+        {/* Bottom fog overlay — fixed, pointer-events-none so it doesn't block clicks */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "fixed",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: "120px",
+            pointerEvents: "none",
+            zIndex: 40,
+            background:
+              "linear-gradient(to top, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.55) 40%, rgba(255,255,255,0.15) 70%, transparent 100%)",
+            backdropFilter: "blur(6px)",
+            WebkitBackdropFilter: "blur(6px)",
+            maskImage: "linear-gradient(to top, black 0%, black 30%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to top, black 0%, black 30%, transparent 100%)",
+          }}
+        />
         <Footer />
       </body>
     </html>

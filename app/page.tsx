@@ -1,13 +1,14 @@
 import Link from "next/link";
 import ServicesCarousel from "@/components/ServicesCarousel";
+import FloatingImageBlobs from "@/components/FloatingImageBlobs";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-white font-sans overflow-hidden">
 
       {/* Hero Section */}
-      <section className="relative pt-40 md:pt-48 pb-16 px-6 max-w-7xl mx-auto w-full flex flex-col items-center text-center">
-
+      <section className="relative pt-40 md:pt-48 pb-20 px-14 sm:px-16 md:px-24 max-w-7xl mx-auto w-full flex flex-col items-center text-center overflow-visible">
+        <FloatingImageBlobs />
         {/* Hero Content */}
         <h1 className="text-3xl md:text-6xl font-extrabold tracking-tight text-gray-900 md:max-w-6xl mx-auto leading-[1.1] font-serif">
           Building Affordable, Scalable Tech Solutions for Growing Businesses
