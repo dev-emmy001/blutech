@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import FloatingImageBlobs from "@/components/FloatingImageBlobs";
+import FAQ from "@/components/FAQ";
 
 export default function Home() {
   return (
@@ -85,6 +86,9 @@ export default function Home() {
 
       {/* Services Carousel Section */}
       <ServicesCarousel />
+
+      {/* FAQ Section */}
+      <FAQ />
 
     </div>
   );
