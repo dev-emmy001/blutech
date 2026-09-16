@@ -28,7 +28,8 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop Links */}
+        <div className="flex items-center gap-4">
+                {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8 text-base font-semibold text-gray-700">
           {navLinks.map((link) => (
             <Link
@@ -41,7 +42,18 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
-
+ <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className=""
+        >
+          <Link href="/contact" onClick={() => setIsOpen(false)}>
+            <button className="bg-blutech-primary hover:bg-blutech-secondary text-white px-5 py-3 rounded-full text-center font-semibold block w-full transition-colors md:hidden">
+              Contact Us
+            </button>
+          </Link>
+        </motion.div>
         {/* Desktop CTA */}
         <div className="hidden md:block">
           <Link href="/contact">
@@ -54,7 +66,8 @@ export default function Navbar() {
             </motion.button>
           </Link>
         </div>
-
+        </div>
+       
         {/* Mobile Menu Button (2 bars) */}
         <button
           className="md:hidden p-2 text-gray-800 z-50 relative flex flex-col justify-center items-center gap-1.5 w-10 h-10"
@@ -71,7 +84,7 @@ export default function Navbar() {
           ></motion.span>
         </button>
 
-        {/* Mobile Floating Menu Dropdown */}
+        {/* Mobile Menu Dropdown */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -97,18 +110,6 @@ export default function Navbar() {
                   </Link>
                 </motion.div>
               ))}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="pt-4 mt-2"
-              >
-                <Link href="/contact" onClick={() => setIsOpen(false)}>
-                  <button className="bg-blutech-primary hover:bg-blutech-secondary text-white px-6 py-4 rounded-full text-center font-semibold block w-full transition-colors ">
-                    Contact Us
-                  </button>
-                </Link>
-              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>

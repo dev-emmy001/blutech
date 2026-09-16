@@ -21,7 +21,7 @@ const IMAGES: FloatingImage[] = [
         bg: "bg-blutech-primary",
         rotate: "-rotate-12",
         radius: "rounded-[30%]",
-        position: "left-[1%] top-20 h-14 w-14 sm:h-16 sm:w-16 md:left-[2%] md:top-24 md:h-24 md:w-24",
+        position: "left-[4%] top-50 h-14 w-14 sm:h-16 sm:w-16 md:left-[2%] md:top-40 md:h-24 md:w-24",
         floatClass: "floating-shape animate-[float-slow_7s_ease-in-out_infinite]",
     },
     {
@@ -32,7 +32,7 @@ const IMAGES: FloatingImage[] = [
         rotate: "-rotate-6",
         clipPath: HEXAGON,
         position:
-            "right-[1%] top-16 h-14 w-14 sm:h-20 sm:w-20 md:right-[2%] md:top-20 md:h-28 md:w-28",
+            "right-[4%] top-30 h-14 w-14 sm:h-20 sm:w-20 md:right-[2%] md:top-30 md:h-28 md:w-28",
         floatClass:
             "floating-shape animate-[float-slow-reverse_8s_ease-in-out_infinite] [animation-delay:0.4s]",
     },
@@ -67,7 +67,7 @@ export default function FloatingImageBlobs() {
             {IMAGES.map((img) => (
                 <div key={img.src} className={`absolute ${img.position} ${img.floatClass}`}>
                     <div
-                        className={`h-full w-full p-2 ${img.bg} ${img.rotate} ${img.radius ?? ""}`}
+                        className={`h-full w-full p-1 ${img.bg} ${img.rotate} ${img.radius ?? ""}`}
                         style={img.clipPath ? { clipPath: img.clipPath } : undefined}
                     >
                         <div

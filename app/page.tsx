@@ -16,7 +16,7 @@ export default function Home() {
         </h1>
 
         <p className="mt-6 text-base md:text-l text-gray-600 max-w-4xl mx-auto leading-relaxed">
-          We turn your ideas into powerful web and mobile applications. Our expert team handles the entire development lifecycle—from concept to deployment.
+          We turn your ideas into powerful web and mobile applications. Our expert team handles the entire development lifecycle: concept to deployment.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 items-center justify-center w-full sm:w-auto">
