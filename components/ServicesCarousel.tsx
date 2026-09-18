@@ -74,7 +74,7 @@ export default function ServicesCarousel() {
         {/* Left Side: Title & Buttons */}
         <div className="w-full md:w-1/3 flex flex-col items-start md:px-0 flex-shrink-0">
           <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 font-serif leading-tight mb-4 md:mb-0">
-            Explore Core <span className="text-blutech-primary">Services</span>
+            Explore Core Services
           </h2>
 
           <div className="mt-10 flex items-center gap-4 hidden md:flex">

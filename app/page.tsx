@@ -27,7 +27,7 @@ export default function Home() {
             Let's Get Started
           </Link>
           <Link
-            href="/contact"
+            href="https://wa.link/oien52"
             className="w-full sm:w-auto px-8 py-4 bg-white border border-gray-900 text-gray-900 hover:bg-gray-50 rounded-full font-semibold text-lg transition-colors"
           >
             Chat on WhatsApp
@@ -53,11 +53,10 @@ export default function Home() {
             {/* Teachers Card */}
             <div className="bg-[#FFA28B] rounded-[2rem] p-8 flex flex-col justify-center h-full min-h-[210px]  transform transition-transform hover:-translate-y-1">
               <div className="flex -space-x-3 mb-5">
-                <img className="w-12 h-12 rounded-full border-2 border-[#FFA28B] object-cover" src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=100&q=80" alt="Teacher" />
-                <img className="w-12 h-12 rounded-full border-2 border-[#FFA28B] object-cover" src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=100&q=80" alt="Teacher" />
-                <img className="w-12 h-12 rounded-full border-2 border-[#FFA28B] object-cover" src="https://images.unsplash.com/photo-1589156191108-c762ff4b96ab?auto=format&fit=crop&w=100&q=80" alt="Teacher" />
-                {/* <img className="w-12 h-12 rounded-full border-2 border-[#FFA28B] object-cover" src="https://images.unsplash.com/photo-1523824922382-2058b8f2a249?auto=format&fit=crop&w=100&q=80" alt="Teacher" /> */}
-                <img className="w-12 h-12 rounded-full border-2 border-[#FFA28B] object-cover" src="https://images.unsplash.com/photo-1506803682981-6e718a9dd3ee?auto=format&fit=crop&w=100&q=80" alt="Teacher" />
+                <img className="w-12 h-12 rounded-full object-cover bg-white" src="/gtp-section/gdg-icon.png" alt="Teacher" />
+                <img className="w-12 h-12 rounded-full object-cover bg-white" src="/gtp-section/aws-icon.png" alt="Teacher" />
+                <img className="w-12 h-12 rounded-full object-cover bg-white" src="/gtp-section/google-icon.png" alt="Teacher" />
+                <img className="w-12 h-12 rounded-full object-cover bg-white" src="/gtp-section/namecheap-icon.png" alt="Teacher" />
               </div>
               <h3 className="font-bold text-gray-900 text-xl leading-tight font-serif">5+ Global Tech Partners (AWS, GDG, etc.)</h3>
             </div>

@@ -138,25 +138,16 @@ export default function PortfolioPage() {
     <div className="flex flex-col min-h-screen bg-white font-sans">
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
-      <section className="pt-36 md:pt-44 pb-20 px-6 md:px-12 max-w-7xl mx-auto w-full">
+      <section className="pt-36 md:pt-44 pb-20 px-6 md:px-6 max-w-7xl mx-auto w-full">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
           <div>
-            <motion.span
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45 }}
-              className="inline-block mb-4 text-xs font-bold tracking-widest uppercase text-blutech-primary"
-            >
-              Our Work
-            </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.08 }}
               className="text-4xl md:text-6xl font-extrabold text-gray-900 font-serif leading-[1.1] max-w-2xl"
             >
-              Projects We&apos;ve{" "}
-              <span className="text-blutech-primary">Built</span>
+              Projects We&apos;ve{" "}Built
             </motion.h1>
           </div>
           <motion.p
@@ -172,7 +163,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* ── FEATURED ROW ──────────────────────────────────────────────────── */}
-      <section className="px-6 md:px-12 max-w-7xl mx-auto w-full pb-20">
+      <section className="px-6 md:px-6 max-w-7xl mx-auto w-full pb-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
 
           {/* Large featured card */}
@@ -204,22 +195,22 @@ export default function PortfolioPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 {/* Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-8 flex flex-col gap-2">
-                  <span className="text-xs font-bold tracking-widest uppercase text-white/70">
+                  {/* <span className="text-xs font-bold tracking-widest uppercase text-white/70">
                     {featured[0].category}
-                  </span>
+                  </span> */}
                   <h3 className="text-2xl md:text-3xl font-bold text-white font-serif leading-tight">
                     {featured[0].title}
                   </h3>
                   <p className="text-white/70 text-sm leading-relaxed max-w-md">
                     {featured[0].description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mt-2">
+                  {/* <div className="flex flex-wrap gap-2 mt-2">
                     {featured[0].tags.map((t) => (
                       <span key={t} className="text-xs bg-white/20 text-white px-3 py-1 rounded-full backdrop-blur-sm">
                         {t}
                       </span>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
                 {/* Arrow */}
                 <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -257,9 +248,9 @@ export default function PortfolioPage() {
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <span className="text-xs font-bold tracking-widest uppercase text-white/60">
+                  {/* <span className="text-xs font-bold tracking-widest uppercase text-white/60">
                     {project.category}
-                  </span>
+                  </span> */}
                   <h3 className="text-xl font-bold text-white font-serif mt-1">{project.title}</h3>
                 </div>
                 <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -272,17 +263,16 @@ export default function PortfolioPage() {
       </section>
 
       {/* ── FILTER BAR ────────────────────────────────────────────────────── */}
-      <section className="px-6 md:px-12 max-w-7xl mx-auto w-full pb-10">
+      <section className="px-6 md:px-6 max-w-7xl mx-auto w-full pb-10">
         <div className="flex flex-wrap gap-3">
           {CATEGORIES.map((cat) => (
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-250 ${
-                active === cat
-                  ? "bg-blutech-primary text-white shadow-md"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-              }`}
+              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-250 ${active === cat
+                ? "bg-blutech-primary text-white"
+                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                }`}
             >
               {cat}
             </button>
@@ -291,7 +281,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* ── ALL PROJECTS GRID ─────────────────────────────────────────────── */}
-      <section className="px-6 md:px-12 max-w-7xl mx-auto w-full pb-32">
+      <section className="px-6 md:px-6 max-w-7xl mx-auto w-full pb-32">
         <AnimatePresence mode="popLayout">
           <motion.div
             key={active}
@@ -306,7 +296,7 @@ export default function PortfolioPage() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: -10 }}
                 transition={{ delay: i * 0.06, duration: 0.4 }}
-                className="group flex flex-col bg-white rounded-[1.75rem] overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                className="group flex flex-col bg-white rounded-[1.75rem] overflow-hidden border border-gray-100 duration-300"
               >
                 {/* Image area — 240px tall */}
                 <div className="relative overflow-hidden h-[240px] flex-shrink-0">
@@ -326,9 +316,9 @@ export default function PortfolioPage() {
                     </div>
                   )}
                   {/* Category chip */}
-                  <span className="absolute top-4 left-4 text-xs font-bold tracking-wider uppercase bg-white/90 text-gray-700 px-3 py-1 rounded-full backdrop-blur-sm">
+                  {/* <span className="absolute top-4 left-4 text-xs font-bold tracking-wider uppercase bg-white/90 text-gray-700 px-3 py-1 rounded-full backdrop-blur-sm">
                     {project.category}
-                  </span>
+                  </span> */}
                 </div>
 
                 {/* Card body */}
@@ -340,7 +330,7 @@ export default function PortfolioPage() {
                     {project.description}
                   </p>
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2 pt-1">
+                  {/* <div className="flex flex-wrap gap-2 pt-1">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
@@ -349,7 +339,7 @@ export default function PortfolioPage() {
                         {tag}
                       </span>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
               </motion.div>
             ))}
@@ -357,45 +347,7 @@ export default function PortfolioPage() {
         </AnimatePresence>
       </section>
 
-      {/* ── CTA STRIP ─────────────────────────────────────────────────────── */}
-      <section className="px-6 md:px-12 max-w-7xl mx-auto w-full pb-28">
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
-          className="bg-[#0f172a] rounded-[2rem] px-10 md:px-20 py-14 md:py-16 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden"
-        >
-          {/* glow */}
-          <div aria-hidden className="pointer-events-none absolute -top-10 -left-10 w-60 h-60 rounded-full bg-blutech-primary opacity-20 blur-2xl" />
-          <div aria-hidden className="pointer-events-none absolute -bottom-10 -right-10 w-60 h-60 rounded-full bg-[#67E8B8] opacity-15 blur-2xl" />
 
-          <div className="relative">
-            <p className="text-white/60 text-sm font-semibold uppercase tracking-widest mb-3">Have a project in mind?</p>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white font-serif leading-tight max-w-lg">
-              Let&apos;s build your next{" "}
-              <span className="text-[#67E8B8]">digital product</span>
-            </h2>
-          </div>
-
-          <div className="relative flex flex-col sm:flex-row gap-3 flex-shrink-0">
-            <Link
-              href="https://blutech.ng/contact-us/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 bg-blutech-primary hover:bg-blutech-secondary text-white rounded-full font-semibold text-sm tracking-wide uppercase transition-colors text-center"
-            >
-              Start a Project
-            </Link>
-            <Link
-              href="/about"
-              className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-full font-semibold text-sm tracking-wide uppercase transition-colors text-center"
-            >
-              About Us
-            </Link>
-          </div>
-        </motion.div>
-      </section>
 
     </div>
   );

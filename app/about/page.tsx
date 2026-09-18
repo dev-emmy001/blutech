@@ -10,6 +10,7 @@ import {
   ChatsCircle,
   CheckCircle,
 } from "@phosphor-icons/react";
+import FAQ from "@/components/FAQ";
 
 // ---------- data ----------
 const services = [
@@ -250,7 +251,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-
+      <FAQ />
     </div>
   );
 }

@@ -57,8 +57,7 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="pt-40 md:pt-48 pb-10 px-6 text-center max-w-4xl mx-auto w-full">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 font-serif leading-[1.1]">
-          We&apos;re Here To{" "}
-          <span className="text-blutech-primary">Help!</span>
+          We&apos;re Here To{" "}Help!
         </h1>
         <p className="mt-5 text-base md:text-lg text-gray-500 max-w-lg mx-auto leading-relaxed">
           We want to hear from you. Let us know how we can help.
@@ -66,7 +65,7 @@ export default function ContactPage() {
       </section>
 
       {/* Main two-column content */}
-      <section className="px-6 pb-32 max-w-6xl mx-auto w-full">
+      <section className="px-6 pb-32 max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-8 items-start">
 
           {/* Left — Contact Form */}
