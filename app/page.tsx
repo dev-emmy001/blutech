@@ -2,6 +2,7 @@
 import Link from "next/link";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import ServicesBento from "@/components/ServicesBento";
+import LogoSliders from "@/components/LogoSliders";
 import FloatingImageBlobs from "@/components/FloatingImageBlobs";
 import FAQ from "@/components/FAQ";
 import { motion } from "framer-motion";
@@ -90,6 +91,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Logo Sliders – Partners & Clients */}
+      <LogoSliders />
 
       {/* Services Bento Grid Section */}
       <ServicesBento />
