@@ -1,7 +1,10 @@
+"use client"
 import Link from "next/link";
 import ServicesCarousel from "@/components/ServicesCarousel";
+import ServicesBento from "@/components/ServicesBento";
 import FloatingImageBlobs from "@/components/FloatingImageBlobs";
 import FAQ from "@/components/FAQ";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -16,12 +19,17 @@ export default function Home() {
         </h1>
 
         <p className="mt-6 text-base md:text-l text-gray-600 max-w-4xl mx-auto leading-relaxed">
-          We turn your ideas into powerful web and mobile applications. Our expert team handles the entire development lifecycle: concept to deployment.
+          <span className="md:hidden">We turn your ideas into powerful web &amp; mobile apps — full SDLC, no bank-breaking fees.</span>
+          <span className="hidden md:inline">At Blutech, we're a team of energetic, young, skilled, and highly experienced individuals and stakeholders, whose goal is to work with you in turning your ideas into powerful, presentable, and sustainable web and mobile applications – through the entire SDLC process: from idea analysis, through planning, design, development, deployment, and seamless management – without you breaking the bank.</span>
         </p>
+
+        <h1 className="text-base md:text-lg font-bold tracking-tight text-gray-900 md:max-w-6xl mx-auto mt-1.5 leading-[1.1] font-serif">
+          RC: 8892246
+        </h1>
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 items-center justify-center w-full sm:w-auto">
           <Link
-            href="/courses"
+            href="/contact"
             className="w-full sm:w-auto px-8 py-4 bg-blutech-primary hover:bg-blutech-secondary text-white rounded-full font-semibold text-lg transition-colors"
           >
             Let's Get Started
@@ -83,8 +91,67 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Services Bento Grid Section */}
+      <ServicesBento />
+
+      <section className="pt-28 md:pt-32 pb-16 px-6  max-w-7xl mx-auto w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65 }}
+          className="relative rounded-[2rem] overflow-hidden min-h-[480px] md:min-h-[560px] bg-gray-100"
+        >
+          {/* Full-bleed photo */}
+          <img
+            src="/happy-biz.jpg"
+            alt="Professional business woman"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+
+          {/* Subtle dark gradient on the right so the card reads clearly on mobile */}
+          <div
+            aria-hidden
+            className="absolute inset-0"
+          />
+
+          {/* Floating white card — right side */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.65, delay: 0.2 }}
+            className="absolute right-5 top-1/2 -translate-y-1/2 w-[90%] sm:w-[60%] md:w-[42%] bg-white rounded-[1.5rem] shadow-2xl p-8 md:p-10 flex flex-col gap-5"
+          >
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 font-serif leading-snug">
+              Empowering Small &amp; Medium Businesses
+            </h1>
+
+            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+              Blutech is committed to empowering small and medium businesses with reliable, scalable, and affordable software solutions. We believe every business deserves a tech foundation strong enough to compete globally, no matter the size or budget. Our team specializes in developing standard websites, web apps, and mobile applications that drive real growth.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3 pt-1">
+              <Link
+                href="https://blutech.ng/contact-us/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-7 py-3.5 bg-blutech-primary hover:bg-blutech-secondary text-white rounded-full font-semibold text-sm tracking-wide transition-colors text-center"
+              >
+                Contact Us
+              </Link>
+              {/* <Link
+                href="/"
+                className="px-7 py-3.5 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 rounded-full font-semibold text-sm tracking-wide uppercase transition-colors text-center"
+              >
+                Our Work
+              </Link> */}
+            </div>
+          </motion.div>
+        </motion.div>
+      </section>
+
+
       {/* Services Carousel Section */}
-      <ServicesCarousel />
+      {/* <ServicesCarousel /> */}
 
       {/* FAQ Section */}
       <FAQ />

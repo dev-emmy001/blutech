@@ -13,7 +13,7 @@ export default function Footer() {
               <img src="/DuoTone-Main.png" alt="Blutech Logo" className="h-8 w-auto object-contain" />
             </Link>
             <p className="text-gray-600 mb-8 max-w-sm leading-relaxed">
-              We believe every business deserves a tech foundation strong enough to compete globally, no matter the size or budget.
+              We’re just one click away. We believe every business deserves a tech foundation strong enough to compete globally, no matter the size or budget.
             </p>
 
             {/* Social Icons */}
@@ -41,7 +41,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <h4 className="font-bold text-gray-900 text-lg mb-2 font-serif">Company</h4>
             <Link href="/" className="text-gray-600 hover:text-blutech-primary transition-colors">Home</Link>
-            <Link href="/abour" className="text-gray-600 hover:text-blutech-primary transition-colors">About</Link>
+            <Link href="/about" className="text-gray-600 hover:text-blutech-primary transition-colors">About</Link>
             <Link href="/portfolio" className="text-gray-600 hover:text-blutech-primary transition-colors">Portfolio</Link>
             <Link href="/contact" className="text-gray-600 hover:text-blutech-primary transition-colors">Contact</Link>
 
@@ -60,10 +60,12 @@ export default function Footer() {
           {/* Column 4: Contact */}
           <div className="flex flex-col gap-4">
             <h4 className="font-bold text-gray-900 text-lg mb-2 font-serif">Contact</h4>
-            <a href="tel:+621829017" className="text-gray-600 hover:text-blutech-primary transition-colors">+234 8163059312</a>
-            <a href="mailto:Hello@blutech.com" className="text-gray-600 hover:text-blutech-primary transition-colors">info@blutech.com</a>
+            <a href="tel:+2347011567240" className="text-gray-600 hover:text-blutech-primary transition-colors">(+234) 701 156 7240</a>
+            <a href="mailto:franklin.i@blutech.ng" className="text-gray-600 hover:text-blutech-primary transition-colors">franklin.i@blutech.ng</a>
             <p className="text-gray-600 leading-relaxed max-w-[200px]">
-              No. 25 Omenazu St. Aba, Abia State
+              <span className="font-semibold">Clintonel Innovation Hub Work Station</span>
+              <br />
+              No. 10 Umuatako Street, Off Star Paper Mill Aba, Abia State
             </p>
           </div>
 
