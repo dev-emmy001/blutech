@@ -5,6 +5,7 @@ import ServicesBento from "@/components/ServicesBento";
 import LogoSliders from "@/components/LogoSliders";
 import FloatingImageBlobs from "@/components/FloatingImageBlobs";
 import FAQ from "@/components/FAQ";
+import ProjectsPreview from "@/components/ProjectsPreview";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -156,6 +157,9 @@ export default function Home() {
 
       {/* Services Carousel Section */}
       {/* <ServicesCarousel /> */}
+
+      {/* Projects Preview Section */}
+      <ProjectsPreview />
 
       {/* FAQ Section */}
       <FAQ />

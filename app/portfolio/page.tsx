@@ -1,106 +1,26 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, AppWindow, DeviceMobile, Globe, MagicWand } from "@phosphor-icons/react";
 
+// ── Types ──────────────────────────────────────────────────────────────────────
+interface Project {
+  id: number;
+  title: string;
+  category: string;
+  tags: string[];
+  description: string;
+  image: string | null;
+  imagePlaceholderBg: string;
+  iconKey: string;
+  featured: boolean;
+  link?: string;
+}
+
 // ── FILTER CATEGORIES ──────────────────────────────────────────────────────────
 const CATEGORIES = ["All", "Web App", "Mobile App", "Website", "UI/UX Design"];
-
-// ── PROJECT DATA ───────────────────────────────────────────────────────────────
-// Replace `image` paths with real screenshots once available.
-// Each project has a dedicated `imagePlaceholderBg` for the placeholder card colour.
-const projects = [
-  {
-    id: 1,
-    title: "FinTrack Dashboard",
-    category: "Web App",
-    tags: ["Next.js", "TypeScript", "Supabase"],
-    description: "A real-time financial analytics dashboard for SME owners to track revenue, expenses, and forecasts at a glance.",
-    image: null,
-    imagePlaceholderBg: "from-blue-400 to-blue-600",
-    iconKey: "webapp",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "ShopEase Mobile",
-    category: "Mobile App",
-    tags: ["React Native", "Firebase", "Stripe"],
-    description: "A cross-platform e-commerce app with seamless checkout, push notifications, and real-time inventory sync.",
-    image: null,
-    imagePlaceholderBg: "from-purple-400 to-purple-700",
-    iconKey: "mobile",
-    featured: true,
-  },
-  {
-    id: 3,
-    title: "Medika Patient Portal",
-    category: "Web App",
-    tags: ["React", "Node.js", "MongoDB"],
-    description: "A HIPAA-compliant portal allowing patients to book appointments, view lab results, and message their doctor.",
-    image: null,
-    imagePlaceholderBg: "from-teal-400 to-cyan-600",
-    iconKey: "webapp",
-    featured: false,
-  },
-  {
-    id: 4,
-    title: "Harvest Farms",
-    category: "Website",
-    tags: ["Next.js", "Sanity CMS", "Tailwind"],
-    description: "A marketing website and blog for an agri-tech startup, with a custom CMS for non-technical editors.",
-    image: null,
-    imagePlaceholderBg: "from-green-400 to-emerald-600",
-    iconKey: "website",
-    featured: false,
-  },
-  {
-    id: 5,
-    title: "Lingo Learn App",
-    category: "Mobile App",
-    tags: ["Flutter", "Dart", "Firebase"],
-    description: "A gamified language-learning app with offline support, adaptive quizzes, and daily streak tracking.",
-    image: null,
-    imagePlaceholderBg: "from-orange-400 to-orange-600",
-    iconKey: "mobile",
-    featured: false,
-  },
-  {
-    id: 6,
-    title: "NexAdmin UI Kit",
-    category: "UI/UX Design",
-    tags: ["Figma", "Design System", "Prototyping"],
-    description: "A comprehensive design system and component library built for SaaS admin dashboards, with 200+ components.",
-    image: null,
-    imagePlaceholderBg: "from-pink-400 to-rose-600",
-    iconKey: "design",
-    featured: false,
-  },
-  {
-    id: 7,
-    title: "PropertyHub",
-    category: "Website",
-    tags: ["Next.js", "Google Maps API", "PostgreSQL"],
-    description: "A real estate listing platform with map-based search, virtual tours, and mortgage calculator integration.",
-    image: null,
-    imagePlaceholderBg: "from-yellow-400 to-amber-600",
-    iconKey: "website",
-    featured: true,
-  },
-  {
-    id: 8,
-    title: "VendorLink B2B",
-    category: "Web App",
-    tags: ["Vue.js", "Laravel", "AWS S3"],
-    description: "A B2B procurement platform connecting manufacturers to verified distributors, with automated invoicing.",
-    image: null,
-    imagePlaceholderBg: "from-indigo-400 to-violet-600",
-    iconKey: "webapp",
-    featured: false,
-  },
-];
 
 // ── ICON MAP ───────────────────────────────────────────────────────────────────
 function ProjectIcon({ iconKey }: { iconKey: string }) {
@@ -127,12 +47,28 @@ function ImagePlaceholder({ gradient, iconKey, title }: { gradient: string; icon
 // ── MAIN COMPONENT ─────────────────────────────────────────────────────────────
 export default function PortfolioPage() {
   const [active, setActive] = useState("All");
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  useEffect(() => {
+    fetch("/data/projects.json")
+      .then((res) => res.json())
+      .then((data: Project[]) => setProjects(data))
+      .catch(() => setProjects([]));
+  }, []);
 
   const filtered = active === "All"
     ? projects
     : projects.filter((p) => p.category === active);
 
   const featured = projects.filter((p) => p.featured);
+
+  if (projects.length === 0) {
+    return (
+      <div className="flex flex-col min-h-screen bg-white font-sans items-center justify-center">
+        <div className="w-8 h-8 border-4 border-blutech-primary border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col min-h-screen bg-white font-sans">
@@ -296,7 +232,7 @@ export default function PortfolioPage() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: -10 }}
                 transition={{ delay: i * 0.06, duration: 0.4 }}
-                className="group flex flex-col bg-white rounded-[1.75rem] overflow-hidden border border-gray-100 duration-300"
+                className="group flex flex-col bg-white rounded-[1.75rem] overflow-hidden border border-gray-100 duration-300 hover:shadow-lg"
               >
                 {/* Image area — 240px tall */}
                 <div className="relative overflow-hidden h-[240px] flex-shrink-0">
@@ -315,10 +251,12 @@ export default function PortfolioPage() {
                       />
                     </div>
                   )}
-                  {/* Category chip */}
-                  {/* <span className="absolute top-4 left-4 text-xs font-bold tracking-wider uppercase bg-white/90 text-gray-700 px-3 py-1 rounded-full backdrop-blur-sm">
-                    {project.category}
-                  </span> */}
+                  {/* Hover arrow */}
+                  {project.link && (
+                    <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <ArrowUpRight size={16} weight="bold" className="text-white" />
+                    </div>
+                  )}
                 </div>
 
                 {/* Card body */}
@@ -329,17 +267,17 @@ export default function PortfolioPage() {
                   <p className="text-gray-500 text-sm leading-relaxed flex-1">
                     {project.description}
                   </p>
-                  {/* Tags */}
-                  {/* <div className="flex flex-wrap gap-2 pt-1">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs font-medium text-blutech-primary bg-blue-50 px-3 py-1 rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div> */}
+                  {project.link && (
+                    <Link
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-blutech-primary hover:text-blutech-secondary transition-colors mt-1"
+                    >
+                      View Project
+                      <ArrowUpRight size={14} weight="bold" />
+                    </Link>
+                  )}
                 </div>
               </motion.div>
             ))}
