@@ -136,9 +136,7 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-3 pt-1">
               <Link
-                href="https://blutech.ng/contact-us/"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/contact"
                 className="px-7 py-3.5 bg-blutech-primary hover:bg-blutech-secondary text-white rounded-full font-semibold text-sm tracking-wide transition-colors text-center"
               >
                 Contact Us

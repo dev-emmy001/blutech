@@ -61,11 +61,12 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <h4 className="font-bold text-gray-900 text-lg mb-2 font-serif">Contact</h4>
             <a href="tel:+2347011567240" className="text-gray-600 hover:text-blutech-primary transition-colors">(+234) 701 156 7240</a>
+            <a href="mailto:isaacfrank197@gmail.com" className="text-gray-600 hover:text-blutech-primary transition-colors">isaacfrank197@gmail.com</a>
             <a href="mailto:franklin.i@blutech.ng" className="text-gray-600 hover:text-blutech-primary transition-colors">franklin.i@blutech.ng</a>
-            <p className="text-gray-600 leading-relaxed max-w-[200px]">
-              <span className="font-semibold">Clintonel Innovation Hub Work Station</span>
+            <p className="text-gray-600 leading-relaxed max-w-[250px]">
+              <span className="font-semibold">Workstation: IGHub</span>
               <br />
-              No. 10 Umuatako Street, Off Star Paper Mill Aba, Abia State
+              No 10 Calabar street, opp ogbonnaya onu polytechnic Aba, Abia state
             </p>
           </div>
 
