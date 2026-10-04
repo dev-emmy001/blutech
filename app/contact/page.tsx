@@ -23,7 +23,7 @@ export default function ContactPage() {
       label: "Visit our office",
       sub: "Workstation: IGHub",
       value: "No 10 Calabar street, opp ogbonnaya onu polytechnic Aba, Abia state",
-      href: "https://maps.app.goo.gl/tGgBq9fR177g2d6V9",
+      href: "https://maps.app.goo.gl/KpJiXTcgLXG7NZYa8",
     },
     {
       icon: <Phone size={36} weight="duotone" className="text-green-500" />,
@@ -85,6 +85,39 @@ export default function ContactPage() {
             ))}
           </div>
 
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="px-6 pb-32 max-w-7xl mx-auto w-full">
+        <div className="bg-gray-50 rounded-3xl p-4 overflow-hidden h-[400px] md:h-[500px] relative">
+          <iframe
+            className="w-full h-full rounded-2xl"
+            src="https://maps.google.com/maps?q=Innovation%20Growth%20Hub,%20Aba,%20Abia%20state&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+          <div className="absolute top-8 left-8 bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-xl border border-gray-100/50 hidden md:block">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">
+                <MapPin size={24} weight="fill" className="text-orange-500" />
+              </div>
+              <h3 className="font-bold text-gray-900 text-lg font-serif">Our Location</h3>
+            </div>
+            <p className="text-sm text-gray-600 max-w-[220px] leading-relaxed">
+              No 10 Calabar street, opp ogbonnaya onu polytechnic Aba, Abia state
+            </p>
+            <a 
+              href="https://maps.app.goo.gl/KpJiXTcgLXG7NZYa8" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="mt-4 inline-block text-sm font-semibold text-blutech-primary hover:text-blue-700 transition-colors"
+            >
+              Get Directions &rarr;
+            </a>
+          </div>
         </div>
       </section>
     </div>
