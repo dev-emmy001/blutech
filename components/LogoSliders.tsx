@@ -1,7 +1,7 @@
 "use client";
 
 const partners = [
-  { name: "CoBuild", logo: "/partners/cobuild.svg" },
+  { name: "CoBuild", logo: "/partners/teamcobuild.webp" },
   { name: "IGHub", logo: "/partners/ighub.webp" },
   { name: "GUDS", logo: "/partners/guds.png" },
   { name: "AWS", logo: "/partners/aws.png" },
