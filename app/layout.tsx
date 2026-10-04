@@ -16,11 +16,11 @@ const jakarta = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
-const SITE_URL = "https://blutech.ng";
+const SITE_URL = "https://blutech-eta.vercel.app";
 const SITE_NAME = "Blutechnology Innovations";
 const SITE_DESCRIPTION =
   "Building Affordable, Scalable Tech Solutions for Growing Businesses. We design and engineer websites, web apps, and mobile products for SMEs across Africa.";
-const OG_IMAGE = "/site-preview.png";
+const OG_IMAGE = "app/opengraph-image.png";
 
 export const metadata: Metadata = {
   title: {
